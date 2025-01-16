@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Girlfriend?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        #gif-container {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Optional: dark overlay */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            pointer-events: none; /* Prevent interaction with hidden container */
+        }
+        #gif-container img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Question -->
+    <h1 id="question">Do you want to be my girlfriend?(I am serious)</h1>
+    <button id="yes-btn" onclick="yesClicked()">Yeeeeeees</button>
+    <button id="no-btn" onclick="noClicked()"></button>
+
+    <!-- GIF Container -->
+    <div id="gif-container">
+        <img src="your-gif-url.gif" alt="Congrats GIF">
+    </div>
+
+    <script>
+        function noClicked() {
+            // Hide the question and buttons
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('yes-btn').style.display = 'none';
+            
+            // Optional: Hide the "No" button if needed
+            document.querySelector('button:nth-of-type(2)').style.display = 'none';
+            alert("I was actually serious this time");
+            
+
+
+}
+        function yesClicked() {
+            // Hide the question and buttons
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('yes-btn').style.display = 'none';
+            
+            // Optional: Hide the "No" button if needed
+            document.querySelector('button:nth-of-type(2)').style.display = 'none';
+
+            // Show the GIF container
+            const gifContainer = document.getElementById('gif-container');
+            gifContainer.style.display = 'flex';
+            gifContainer.style.pointerEvents = 'auto'; // Allow interaction when visible
+
+            // Optional: Show a message after a slight delay
+            setTimeout(() => {
+                alert("🎉 Congrats! You're now my girlfriend! 🎉");
+            }, 2000); // 2-second delay for the alert
+        }
+    </script>
+</body>
+</html>
